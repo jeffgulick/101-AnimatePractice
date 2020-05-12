@@ -16,6 +16,10 @@ const setElementColor = (color) => {
   elementColor = color
 }
 
+const setElementText = (text) => {
+  inputtedText = text
+}
+
 // This function creates a new element and attaches to the parent element: element-collector
 const createNewElement = () => {
   const elementContainer = document.getElementById("element-collector")
@@ -28,6 +32,7 @@ const createNewElement = () => {
   newElement.appendChild(textNode)
   newElement.classList.add("animated", "infinite", animationName)
   newElement.style.color = elementColor
+  newElement.textContent = inputtedText
 
   // attach the new element to the parent
   elementContainer.appendChild(newElement)
