@@ -20,19 +20,23 @@ const setElementText = (text) => {
   inputtedText = text
 }
 
+const setElementType = (type) => {
+  elementType = type
+}
+
 // This function creates a new element and attaches to the parent element: element-collector
 const createNewElement = () => {
   const elementContainer = document.getElementById("element-collector")
   
   // create a new element with default values
-  const newElement = document.createElement("H3")
-  const textNode = document.createTextNode("Hello")
+  const newElement = document.createElement(elementType)//creates the element type
+  const textNode = document.createTextNode(inputtedText)//what the elemenmt says
 
   // Using dot.notation to access the new element's properties
   newElement.appendChild(textNode)
   newElement.classList.add("animated", "infinite", animationName)
-  newElement.style.color = elementColor
-  newElement.textContent = inputtedText
+  newElement.style.color = elementColor 
+  // newElement.textContent = inputtedText
 
   // attach the new element to the parent
   elementContainer.appendChild(newElement)
